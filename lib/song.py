@@ -37,7 +37,7 @@ class Song:
         CONN.commit()
         self.id= CURSOR.execute("SELECT last_insert_rowid() FROM songs").fetchone()[0]
 
-# Classmethod to handle create and save of our instances
+# Classmethod to handle create and save of our instances to the  database and return the object created
     @classmethod
     def create(cls, name , album):
         song= Song(name, album)
